@@ -30,13 +30,11 @@ ul>a {
     padding: 13px;
 }
 
-table {
-    border: 3px solid black;
-}
-
+table,
 td,
 th {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-collapse: collapse;
     padding: 2px 20px;
 }
 
