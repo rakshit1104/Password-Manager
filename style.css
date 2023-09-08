@@ -18,6 +18,15 @@ nav {
 
 .logo {
     font-weight: 1000;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_image{
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+    align-self: center;
 }
 
 ul>a {
@@ -25,7 +34,8 @@ ul>a {
     padding: 10px;
 }
 
-/* Main Body */
+
+/* Index page */
 .main {
     padding: 13px;
 }
@@ -59,12 +69,32 @@ input {
     cursor: pointer;
 }
 
-.delete{
+.delete {
     cursor: pointer;
 }
 
-.copyhere{
+.copyhere {
     height: 15px;
     width: 15px;
     cursor: pointer;
+}
+
+/* About Page */
+.main2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#security {
+    height: 400px;
+    width: 400px;
+}
+
+#para1 {
+    font-size: 70px;
+}
+
+#description {
+    font-size: 20px;
 }
