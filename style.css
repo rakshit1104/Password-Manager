@@ -55,7 +55,16 @@ input {
 .btn {
     width: 150px;
     margin: 0px 65px;
-    background-color: black;
-    color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.copyhere{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
 }

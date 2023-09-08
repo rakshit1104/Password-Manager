@@ -1,9 +1,14 @@
 // Logic for table
 
+const copyText = (copy) => {
+    navigator.clipboard.writeText(copy);
+    alert(`Successfully copied to the Clipboard`);
+}
+
 const deletePassword = (website) => {
     let data = localStorage.getItem("passwords")
     let arr = JSON.parse(data);
-    arrUpdated = arr.filter((e)=>{
+    arrUpdated = arr.filter((e) => {
         return e.website != website
     })
     localStorage.setItem("passwords", JSON.stringify(arrUpdated))
@@ -31,11 +36,11 @@ const showPassword = () => {
             const element = arr[index];
 
             str += `<tr>
-            <td>${element.website}</td>
-            <td>${element.username}</td>
-            <td>${element.password}</td>
-            <td><button class="btnsm" onclick="deletePassword('${element.website}')">Delete</button></td>
-        </tr> `
+            <td>${element.website} <img onclick="copyText('${element.website}')" class = "copyhere" src = "/copy.jpg" ></td>
+            <td>${element.username} <img onclick="copyText('${element.username}')" class = "copyhere" src = "/copy.jpg" ></td>
+            <td>${element.password} <img onclick="copyText('${element.password}')" class = "copyhere" src = "/copy.jpg" ></td>
+            <td><button class="delete" onclick="deletePassword('${element.website}')">Delete</button></td>
+        </tr>`
         }
         tb.innerHTML = tb.innerHTML + str;
     }
