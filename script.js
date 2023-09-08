@@ -1,4 +1,17 @@
 // Logic for table
+
+const deletePassword = (website) => {
+    let data = localStorage.getItem("passwords")
+    let arr = JSON.parse(data);
+    arrUpdated = arr.filter((e)=>{
+        return e.website != website
+    })
+    localStorage.setItem("passwords", JSON.stringify(arrUpdated))
+    alert(`Successfully deleted ${website}'s password`)
+    showPassword();
+
+}
+
 const showPassword = () => {
 
     let tb = document.querySelector("table");
@@ -21,11 +34,14 @@ const showPassword = () => {
             <td>${element.website}</td>
             <td>${element.username}</td>
             <td>${element.password}</td>
-            <td>${"Delete"}</td>
+            <td><button class="btnsm" onclick="deletePassword('${element.website}')">Delete</button></td>
         </tr> `
         }
         tb.innerHTML = tb.innerHTML + str;
     }
+    website.value = "";
+    username.value = "";
+    password.value = "";
 }
 
 console.log("Hello World");
