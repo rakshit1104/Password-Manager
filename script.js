@@ -17,11 +17,19 @@ const deletePassword = (website) => {
 
 }
 
+const maskPassword = (pass) => {
+    let string = "";
+    for (let index = 0; index < pass.length; index++) {
+        string += "*";        
+    }
+    return string
+}
+
 const showPassword = () => {
 
     let tb = document.querySelector("table");
     let data = localStorage.getItem("passwords");
-    if (data == null) {
+    if (data == null || JSON.parse(data).length == 0) {
         tb.innerHTML = "No Data To Show"
     } else {
         tb.innerHTML = `<tr>
@@ -38,7 +46,7 @@ const showPassword = () => {
             str += `<tr>
             <td>${element.website} <img onclick="copyText('${element.website}')" class = "copyhere" src = "/copy.jpg" ></td>
             <td>${element.username} <img onclick="copyText('${element.username}')" class = "copyhere" src = "/copy.jpg" ></td>
-            <td>${element.password} <img onclick="copyText('${element.password}')" class = "copyhere" src = "/copy.jpg" ></td>
+            <td>${maskPassword(element.password)} <img onclick="copyText('${element.password}')" class = "copyhere" src = "/copy.jpg" ></td>
             <td><button class="delete" onclick="deletePassword('${element.website}')">Delete</button></td>
         </tr>`
         }
