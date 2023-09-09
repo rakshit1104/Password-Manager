@@ -46,9 +46,9 @@ const showPassword = () => {
             const element = arr[index];
 
             str += `<tr>
-            <td>${element.website} <img onclick="copyText('${element.website}')" class = "copyhere" src = "/copy.jpg" ></td>
-            <td>${element.username} <img onclick="copyText('${element.username}')" class = "copyhere" src = "/copy.jpg" ></td>
-            <td>${maskPassword(element.password)} <img onclick="copyText('${element.password}')" class = "copyhere" src = "/copy.jpg" ></td>
+            <td>${element.website} <img onclick="copyText('${element.website}')" class = "copyhere" src = "copy.jpg" ></td>
+            <td>${element.username} <img onclick="copyText('${element.username}')" class = "copyhere" src = "copy.jpg" ></td>
+            <td>${maskPassword(element.password)} <img onclick="copyText('${element.password}')" class = "copyhere" src = "copy.jpg" ></td>
             <td><button class="delete" onclick="deletePassword('${element.website}')">Delete</button></td>
         </tr>`
         }
