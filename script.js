@@ -1,10 +1,10 @@
-// Logic for table
-
+// Logic for clipboard
 const copyText = (copy) => {
     navigator.clipboard.writeText(copy);
     alert(`Successfully copied to the Clipboard`);
 }
 
+// Logic for delete button
 const deletePassword = (website) => {
     let data = localStorage.getItem("passwords")
     let arr = JSON.parse(data);
@@ -17,14 +17,16 @@ const deletePassword = (website) => {
 
 }
 
+// Logic for masking the password
 const maskPassword = (pass) => {
     let string = "";
     for (let index = 0; index < pass.length; index++) {
-        string += "*";        
+        string += "*";
     }
     return string
 }
 
+// Logic for the table
 const showPassword = () => {
 
     let tb = document.querySelector("table");
